@@ -10,14 +10,14 @@ import java.io.Serializable;
 
 public class ObjectWriteRead {
     public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
-        System.out.println("Writing of object");
-        Player p1 = new Player(1, "Ram", 7);
-        FileOutputStream fos  = new FileOutputStream("score.ser");
-        ObjectOutputStream  oos = new ObjectOutputStream(fos);
-        oos.writeObject(p1);
-        oos.close();fos.close();
+//        System.out.println("Writing of object");
+//        Player p1 = new Player(1, "Ram", 7);
+//        FileOutputStream fos  = new FileOutputStream("score.ser");
+//        ObjectOutputStream  oos = new ObjectOutputStream(fos);
+//        oos.writeObject(p1);
+//        oos.close();fos.close();
         System.out.println("Reading object from file");
-        FileInputStream fis = new FileInputStream("score.ser");
+        FileInputStream fis = new FileInputStream("score.txt");
         ObjectInputStream ois = new ObjectInputStream(fis);
         Player scoreFromFile = (Player) ois.readObject();
         System.out.println("The score of the player is:");
@@ -32,7 +32,7 @@ class Player implements Serializable{
     int id;
     String name;
     int score;
-
+    static int money;
     public Player(int id, String name, int score) {
         this.id = id;
         this.name = name;

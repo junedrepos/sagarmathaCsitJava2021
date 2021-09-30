@@ -1,8 +1,8 @@
 package np.edu.scst.multithread.synchronizeddemo;
 public class College {
-    public synchronized void classRoom(){
+    public synchronized void classRoom(){//synchronized method
          for(int i =0; i<10; i++){
-            System.out.println("This class is currently occupied by "+Thread.currentThread().getName());
+            System.out.println("This class is currently being taught by "+Thread.currentThread().getName());
             try{Thread.sleep(1000); }catch(InterruptedException e){}
         }
     }

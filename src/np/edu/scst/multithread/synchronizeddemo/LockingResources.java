@@ -3,18 +3,18 @@ package np.edu.scst.multithread.synchronizeddemo;
 public class LockingResources {
 
     public static void main(String[] args) {
-        String duster = "I am duster";
+        String classroom = "I am classroom";
         Thread ram = new Thread("Ram") {
             @Override
             public void run() {
                 //                  name of resource we want to lock
-                synchronized (duster) {
+                synchronized (classroom) {
                     for (int i = 0; i < 10; i++) {//synchronized block
                         try {
                             Thread.sleep(1000);
                         } catch (Exception e) {
                         }
-                        System.out.println(duster + " being used by " + Thread.currentThread().getName());
+                        System.out.println(classroom + " being used by " + Thread.currentThread().getName());
                     }
                 }
             }
@@ -27,13 +27,13 @@ public class LockingResources {
         Thread shyam = new Thread("Shyam") {
             @Override
             public void run() {
-                synchronized (duster) {//synchronized block
+                synchronized (classroom) {//synchronized block
                     for (int i = 0; i < 10; i++) {
                         try {
                             Thread.sleep(1000);
                         } catch (Exception e) {
                         }
-                        System.out.println(duster + " being used by " + Thread.currentThread().getName());
+                        System.out.println(classroom + " being used by " + Thread.currentThread().getName());
                     }
                 }
             }

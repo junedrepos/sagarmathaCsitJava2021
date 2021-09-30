@@ -6,7 +6,9 @@ public class ExceptionOccurenceAndHandling {
     public static void main(String[] args) {
         System.out.println("apple");
         System.out.println("ball");
-      try{
+      
+        
+        try{
         FileInputStream fis = new FileInputStream("fis.txt");
       }catch(FileNotFoundException e){
           System.out.println("File not found");

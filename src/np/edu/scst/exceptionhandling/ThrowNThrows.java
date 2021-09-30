@@ -25,7 +25,7 @@ public class ThrowNThrows {
         
     }
     
-    public void readFile() throws FileNotFoundException{
+    public void readFile() throws FileNotFoundException {
         FileInputStream fis = new FileInputStream(new File("apple.txt"));
         
     }

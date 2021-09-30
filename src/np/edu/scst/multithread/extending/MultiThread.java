@@ -14,18 +14,21 @@ public class MultiThread extends Thread{
 //  millisecond ;    1000 millisecond = 1 second
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MultiThread mt1 = new MultiThread();
         MultiThread mt2 = new MultiThread();
         //change name of thread  defualt name is Thread-index
         mt1.setName("Mero Thread 1");
         mt2.setName("Mero Thread 2");
 //        Thread.currentThread().setName("Mero afnai main thread");
-        mt1.setPriority(Thread.MIN_PRIORITY);//1
+        mt1.setPriority(1);//1
         mt2.setPriority(Thread.MAX_PRIORITY);//10
         mt1.start();//trigger parallel thread
+//        mt1.join();
         mt2.start();//trigger another parallel thread
+        System.out.println(mt1.isAlive());
         MultiThread.print();
+        
         
     }
     

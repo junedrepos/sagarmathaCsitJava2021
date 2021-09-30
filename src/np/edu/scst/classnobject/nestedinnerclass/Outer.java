@@ -15,3 +15,11 @@ public class Outer {
     }
     
 }
+
+class BahiraKoClass{
+    public static void main(String[] args) {
+//        Inner i = new Inner();
+    Outer out = new Outer();
+    out.getInnerMethod();
+    }
+}
